@@ -36,3 +36,21 @@ Located at: `res/xml/accessibility_service_config.xml`
     android:notificationTimeout="100"
     android:canRetrieveWindowContent="true"
     android:settingsActivity="com.example.myapplication.MainActivity" />
+```
+To use the code first 
+1: in com\example\yourapp\   You would copy or create the 2 main files KeyloggerService.kt and MainActivity.kt
+
+2: Paste the code in there designated files.
+
+3: Replace your AndroidManifest.xml with the provided one
+
+4: In res\ create another folder called layout and in the layout folder create activity_main.xml and enter the text editor and paste the provided code
+
+5: In build.gradle.kts replace it the provided code
+
+6: After that run your python server and replace the URL in the kyloggerService.kt with the one of your flask app i recommend using a service to expose your app to get a HTTPS URL as current android versions block HTTP requests
+
+7: Than once you replace the URL incase you encounter an error make sure your >package com.example.myapplication< is replaced with your actual package name including in the AndroidManifest.xml, Than after that save and hit ctrl+F9 to build
+
+Once you build the app it install it on an android device and allow accessibility services on the app and it should start showing a notification that the service is running.
+Once it starts check your flask logs to read for 200 when it does and you begin seeing logs test the app by typing outside the app it should than creat a txt file on your pc and recording the keystokes from the android device in real time.
